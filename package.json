@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "author": "David Cetinkaya",
   "private": false,
-  "description": "A React.js component for using Embla Carousel",
+  "description": "A React.js component for Embla Carousel, written in TypeScript",
   "keywords": [
     "slider",
     "carousel",
