@@ -5,6 +5,8 @@
   </a>
 </p>
 
+# STAY TUNED - UPCOMING, NOT FINISHED YET.
+
 # Embla Carousel React &middot; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Build%20amazing%20React%20carousels%20with%20Embla%20Carousel&url=https://davidcetinkaya.github.io/embla-carousel&via=david_cetinkaya&hashtags=frontend,javascript,webdeveloper,developers,reactjs)
 
 ![GitHub](https://img.shields.io/github/license/davidcetinkaya/embla-carousel-react.svg?color=blue) ![npm](https://img.shields.io/npm/v/embla-carousel-react.svg) ![Travis (.org) branch](https://img.shields.io/travis/davidcetinkaya/embla-carousel-react/master.svg) ![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)
