@@ -1,6 +1,6 @@
 {
   "name": "embla-carousel-react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "David Cetinkaya",
   "private": false,
   "description": "A React.js component for Embla Carousel, written in TypeScript",
