@@ -4,6 +4,7 @@ import React, { Component, ReactNode } from 'react'
 type PropType = {
   htmlTagName: string
   children?: ReactNode
+  className?: string
   options?: UserOptions
   emblaRef: (embla: EmblaCarousel) => void
 }
@@ -27,6 +28,7 @@ class EmblaCarouselReact extends Component<PropType> {
     return React.createElement(
       this.props.htmlTagName,
       {
+        className: this.props.className,
         ref: this.container,
         style: { overflow: 'hidden' },
       },

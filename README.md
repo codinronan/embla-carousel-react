@@ -27,6 +27,7 @@
 - [Implementations](#implementations)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Props](#props)
 - [License](#license)
 
 ## Demo
@@ -92,6 +93,13 @@ class EmblaCarouselComponent extends Component {
   }
 }
 ```
+
+## Props
+
+- **`htmlTagName`** - Any valid HTML tag like `div` or `ul` etc.
+- **`className`** - Applied to top the top level wrapper.
+- **`emblaRed`** - Like a ref function to access the Embla instance in parent component.
+- **`options`** - Same [options](https://github.com/davidcetinkaya/embla-carousel#options) as the vanilla JS Embla package.
 
 ## License
 
