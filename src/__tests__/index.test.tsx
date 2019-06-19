@@ -8,7 +8,7 @@ configure({ adapter: new EnzymeAdapter() })
 const options: UserOptions = {
   align: 'center',
   containerSelector: '*',
-  groupSlides: 1,
+  slidesToScroll: 1,
   draggable: true,
   dragFree: false,
   loop: false,
