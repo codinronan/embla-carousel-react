@@ -1,30 +1,37 @@
+<br />
 <p align="center">
-  <br>
-  <a href="https://davidcetinkaya.github.io/embla-carousel/" target="_blank">
-    <img width="70" src="https://rawgit.com/davidcetinkaya/embla-carousel/master/docs/assets/embla-logo.svg" alt="Embla Carousel">
+  <a href="https://davidcetinkaya.github.io/embla-carousel" target="_blank"><img width="80" height="80" src="https://rawgit.com/davidcetinkaya/embla-carousel/master/docs/assets/embla-logo.svg" alt="Embla Carousel React">
   </a>
 </p>
-
-# STAY TUNED - UPCOMING, NOT FINISHED YET.
-
-# Embla Carousel React &middot; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Build%20amazing%20React%20carousels%20with%20Embla%20Carousel&url=https://davidcetinkaya.github.io/embla-carousel&via=david_cetinkaya&hashtags=frontend,javascript,webdeveloper,developers,reactjs)
-
-![GitHub](https://img.shields.io/github/license/davidcetinkaya/embla-carousel-react.svg?color=blue) ![npm](https://img.shields.io/npm/v/embla-carousel-react.svg) ![Travis (.org) branch](https://img.shields.io/travis/davidcetinkaya/embla-carousel-react/master.svg) ![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)
-
-> A React.js component for Embla Carousel, written in TypeScript.
+<strong>
+  <h1 align="center">Embla Carousel React</h1>
+</strong>
+<p align="center">
+  A React.js component for Embla Carousel, written in TypeScript.
+</p>
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://www.npmjs.com/package/embla-carousel-react" target="_blank"><img src="https://img.shields.io/npm/v/embla-carousel-react.svg"></a>
+  <a href="https://travis-ci.org/davidcetinkaya/embla-carousel-react" target="_blank"><img src="https://img.shields.io/travis/davidcetinkaya/embla-carousel-react/master.svg"></a>
+  <a href="https://prettier.io" target="_blank"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat"></a>
+</p>
+<p align="center">
+  <strong>
+    <a href="https://davidcetinkaya.github.io/embla-carousel" target="_blank">« View Demo »</a>
+  </strong>
+</p>
 
 ## Table of contents
 
 - [Demo](#demo)
 - [Implementations](#implementations)
 - [Installation](#installation)
-- [Usage with React Hooks](#usagewithreacthooks)
-- [Usage with React Class](#usagewithreactclass)
+- [Usage](#usage)
 - [License](#license)
 
 ## Demo
 
-Try Embla Carousel on the [Demo Page](https://davidcetinkaya.github.io/embla-carousel) or [CodeSandbox](https://codesandbox.io/s/embla-carousel-react-znjzv).
+> Try it here on the [Demo Page](https://davidcetinkaya.github.io/embla-carousel) or [CodeSandbox](https://codesandbox.io/s/embla-carousel-loop-false-oyols) ✨.
 
 ## Implementations
 
@@ -40,10 +47,53 @@ yarn add embla-carousel-react
 import EmblaCarouselReact from 'embla-carousel-react'
 ```
 
-## Usage with React Hooks
+## Usage
 
-## Usage with React Class
+```javascript
+class EmblaCarouselComponent extends Component {
+  componentDidMount() {
+    this.embla.on('select', () => {
+      console.log(`Current index is ${this.embla.selectedIndex()}`)
+    })
+  }
+
+  next() {
+    this.embla.next()
+  }
+
+  previous() {
+    this.embla.previous()
+  }
+
+  render() {
+    return (
+      <>
+        <EmblaCarouselReact
+          htmlTagName="div"
+          emblaRef={c => (this.embla = c)}
+          options={{ loop: false }}
+        >
+          <div style={{ display: 'flex', willChange: 'transform' }}>
+            <div style={{ flex: '0 0 auto', width: '100%' }}>
+              Slide 1
+            </div>
+            <div style={{ flex: '0 0 auto', width: '100%' }}>
+              Slide 2
+            </div>
+            <div style={{ flex: '0 0 auto', width: '100%' }}>
+              Slide 3
+            </div>
+          </div>
+        </EmblaCarouselReact>
+        <button onClick={() => this.previous()}>Previous</button>
+        <button onClick={() => this.next()}>Next</button>
+      </>
+    )
+  }
+}
+```
 
 ## License
 
 Embla is [MIT licensed](./LICENSE).
+Copyright © 2019-present, David Cetinkaya.
