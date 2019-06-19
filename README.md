@@ -31,7 +31,7 @@
 
 ## Demo
 
-> Try it here on the [Demo Page](https://davidcetinkaya.github.io/embla-carousel) or [CodeSandbox](https://codesandbox.io/s/embla-carousel-loop-false-oyols) ✨.
+> Try it on the [Demo Page](https://davidcetinkaya.github.io/embla-carousel) or [CodeSandbox](https://codesandbox.io/s/embla-carousel-react-znjzv) ✨.
 
 ## Implementations
 
@@ -95,5 +95,5 @@ class EmblaCarouselComponent extends Component {
 
 ## License
 
-Embla is [MIT licensed](./LICENSE).
+Embla is [MIT licensed](./LICENSE).  
 Copyright © 2019-present, David Cetinkaya.
