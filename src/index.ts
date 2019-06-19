@@ -1,8 +1,8 @@
 import EmblaCarousel, { UserOptions } from 'embla-carousel'
-import { createElement, ReactNode, useEffect, useRef } from 'react'
+import React, { Component, ReactNode } from 'react'
 
 type PropType = {
-  elementType: string
+  htmlTagName: string
   children?: ReactNode
   options?: UserOptions
   emblaRef: (embla: EmblaCarousel) => void
@@ -10,27 +10,29 @@ type PropType = {
 
 const canUseDOM = !!(typeof window !== 'undefined' && window.document)
 
-const EmblaCarouselReact = (props: PropType) => {
-  const { elementType, emblaRef, options, children } = props
-  const carouselRef = useRef<HTMLElement>(null)
+class EmblaCarouselReact extends Component<PropType> {
+  container = React.createRef<HTMLElement>()
+  embla?: EmblaCarousel
 
-  useEffect(() => {
-    const node = carouselRef.current
-    if (canUseDOM && node && emblaRef && children) {
-      const embla: EmblaCarousel = EmblaCarousel(node, options)
-      emblaRef(embla)
-      return embla.destroy
-    }
-  }, [elementType, emblaRef, options, children])
+  componentDidMount() {
+    if (!canUseDOM) return
+    this.embla = EmblaCarousel(
+      this.container.current as HTMLElement,
+      this.props.options,
+    )
+    this.props.emblaRef(this.embla)
+  }
 
-  return createElement(
-    elementType,
-    {
-      ref: carouselRef,
-      style: { overflow: 'hidden' },
-    },
-    children,
-  )
+  render() {
+    return React.createElement(
+      this.props.htmlTagName,
+      {
+        ref: this.container,
+        style: { overflow: 'hidden' },
+      },
+      this.props.children,
+    )
+  }
 }
 
 export default EmblaCarouselReact

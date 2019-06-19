@@ -24,9 +24,11 @@ describe('Embla Carousel React', () => {
     const embla = mount(
       <EmblaCarouselReact
         options={options}
-        elementType="div"
+        htmlTagName="div"
         emblaRef={() => null}
-      />,
+      >
+        <div />
+      </EmblaCarouselReact>,
     )
     expect(embla.props().options).toEqual(options)
   })
@@ -35,7 +37,7 @@ describe('Embla Carousel React', () => {
     const embla = mount(
       <EmblaCarouselReact
         options={options}
-        elementType="div"
+        htmlTagName="div"
         emblaRef={() => null}
       >
         <ul>
