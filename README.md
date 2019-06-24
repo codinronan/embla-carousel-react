@@ -54,16 +54,18 @@ import EmblaCarouselReact from 'embla-carousel-react'
 class EmblaCarouselComponent extends Component {
   componentDidMount() {
     this.embla.on('select', () => {
-      console.log(`Current index is ${this.embla.selectedIndex()}`)
+      console.log(
+        `Current index is ${this.embla.selectedScrollSnap()}`,
+      )
     })
   }
 
   next() {
-    this.embla.next()
+    this.embla.scrollNext()
   }
 
-  previous() {
-    this.embla.previous()
+  prev() {
+    this.embla.scrollPrev()
   }
 
   render() {
@@ -86,7 +88,7 @@ class EmblaCarouselComponent extends Component {
             </div>
           </div>
         </EmblaCarouselReact>
-        <button onClick={() => this.previous()}>Previous</button>
+        <button onClick={() => this.prev()}>Previous</button>
         <button onClick={() => this.next()}>Next</button>
       </>
     )
